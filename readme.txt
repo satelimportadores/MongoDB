@@ -94,7 +94,16 @@ db.customers.update(
 		)
 		
 
+	//Eliminar datos
+	db.customers.remove(
+		{firstName: "Isaac02"}
+	)
 	
+		//Eliminar solo un dato de todos los que coinciden:
+		db.customers.remove(
+			{firstName: "Isaac"}, {justOne: true}
+		)
+		
 	
 
 
