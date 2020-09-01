@@ -29,3 +29,8 @@ db.customers.insert([
 	{firstName: 'Isaac04',last_Name: 'Asimov04'}
 ])
 
+//Busqueda de datos
+db.customers.find({firstName: 'Isaac04'})
+
+
+
