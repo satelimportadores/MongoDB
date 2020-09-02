@@ -193,18 +193,6 @@ db.customers.update(
 		mongorestore --db mitiendavirtual /dump/mitiendavirtual
 		//Restaurar solo la collecion de una bd
 		mongorestore --db mitiendavirtual --collection usuarios /dump/mitiendavirtual/usuarios.bson
-		
-	
-	
-		
-	
-		
-	
-
-
-
-
-
 
 
 
