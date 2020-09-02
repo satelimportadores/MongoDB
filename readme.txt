@@ -141,6 +141,36 @@ db.customers.update(
 		{name: {$regex: 'ston'}}
 	)
 	
+//Ordenamiento sort:
+
+	//Ordenar de menor a mayor
+	db.customers.find().sort({lastName: 1})
+	
+	//Ordenar de mayor a menor
+	db.customers.find().sort({lastName: -1})
+	
+	//Contar los datos "Registros"
+	db.customers.find().count()
+	
+	//Contar todos los datos con genero:
+	db.customers.find({gender: "male"}).count()
+	
+	//limitar las busquedas
+		
+		//Ver solo tres 3 datos:
+		db.customers.find().limit(3)
+		//Ver solo tres datos y ordenarlos:
+		db.customers.find().limit(3).sort({lastName: -1})
+	
+	//Utilizar metodos de JavaScript
+	
+		//Recorrer todos los datos, esto devuelve un documento con datos:
+		//se imprimira los nombre que encuentre.
+		db.customers.find().forEach(function(doc) {
+			print("Customer Name" + doc.firstName);
+		})
+		
+//Interfaz grafica MongoBooster,RoboMongo
 	
 	
 	
