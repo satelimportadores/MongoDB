@@ -172,7 +172,31 @@ db.customers.update(
 		
 //Interfaz grafica MongoBooster,RoboMongo
 	
+//Copias de seguridad:
 	
+	//Nos ubicamos en CMD en la carpeta donde queremos que quede
+		mongodump
+	//Se Crearan carpetas con el nombre de las bases de datos
+	//Se crearan archivos de extencion bson y metadata
+	
+//Restaurar:
+
+	//Se borrara una base de datos de pruebas:
+		use mitiendavirtual
+		show collections
+		
+			db.dropDatabase()
+	
+	//Se restaura y ubica en la carpeta superior donde esta el backup "dump"
+		mongorestore 
+		//Restaurar solo una bd
+		mongorestore --db mitiendavirtual /dump/mitiendavirtual
+		//Restaurar solo la collecion de una bd
+		mongorestore --db mitiendavirtual --collection usuarios /dump/mitiendavirtual/usuarios.bson
+		
+	
+	
+		
 	
 		
 	
