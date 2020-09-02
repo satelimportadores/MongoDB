@@ -104,6 +104,47 @@ db.customers.update(
 			{firstName: "Isaac"}, {justOne: true}
 		)
 		
+//Busquedas Elavoradas:
+
+	//Busqueda de nombre que cumplan con alguna de las condiciones: $or
+	db.customers.find(
+		{$or: [{firstName: "Elena"}, {firstName: "Isaac"}]}
+	)
+	
+	//Buscar por otro atributo
+	db.customers.fid(
+		{gender: "male"}
+	)
+	
+	//Buscar las personas que tengan mas de 40 años: $gt Grader Thant 
+	db.customers.find(
+		{age: {$gt: 40}}
+	)
+	
+	//Buscar las personas que tengan menos de 40 años: $lt Less Thant 
+	db.customers.find(
+		{age: {$lt: 40}}
+	)
+	
+	//Buscar las personas que esten dentro de un rango 30 y 90 años:
+	db.customers.find(
+		{age: {$gt: 30, $lt: 90}}
+	)
+	
+	//Buscar en datos anidados
+	db.customers.find(
+		{"address.city": "Boston"}
+	)
+	
+	//Buscar por expresiones regulares:
+	db.customers.find(
+		{name: {$regex: 'ston'}}
+	)
+	
+	
+	
+	
+		
 	
 
 
